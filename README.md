@@ -6,8 +6,6 @@
 
 #### Tópicos de aprendizagem 
 
-<span style="color:yellow;">
-
 - Variáveis e Tipos de Dados;
 - Estruturas Lógicas e Condicionais;
 - Estruturas de Decisão e Repetição;
