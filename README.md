@@ -27,7 +27,7 @@
 > - Projeto 3: Banco;
 > - E muito mais!</span>
 
-
+[![Alexandre Lorena GitHub stats](https://github-readme-stats.vercel.app/api?username=alexandrelorena)](https://github.com/alexandrelorena/github-readme-stats)
 
 Clique [aqui](https://alexandrelorena.github.io/index.html#home) para acessar o currículo
  
