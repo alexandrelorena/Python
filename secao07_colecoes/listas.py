@@ -7,7 +7,7 @@ de serem DINÂMICO e tamb-em de podermos colocar QUALUER tipo de dado.
 
 - DINÂMICO: não possui tamanho fixo;
 - Qualquer tipo de dado
-
+- Litas são mutáveis
 As listas em Python são representadas por colchete: []
 """
 type([])
