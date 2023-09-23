@@ -61,5 +61,3 @@ print(type(res))
 print(res.most_common(5))
 # [('de', 7), ('o', 4), ('do', 2), ('serviço', 2), ('militar', 2)]
 
-
-print("----------Métodos matemáticos de Conjuntos 3----------")
