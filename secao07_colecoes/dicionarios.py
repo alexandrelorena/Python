@@ -168,3 +168,13 @@ veja = {}.fromkeys(range(1, 11), 'novo')
 
 print(veja)
 print(type(veja))
+
+print('--------------- Soma, valor máximo, valor mínimo, tamanho ---------------- ')
+
+mat = {1, 2, 3, 4, 5, 6}
+
+print(sum(mat))
+print(max(mat))
+print(min(mat))
+print(len(mat))
+
