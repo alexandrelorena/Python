@@ -20,11 +20,11 @@ print('\033[97;40mExemplo 1: while numero < 10, print(numero), numero = numero +
 while numero < 10:
     print(numero)
     numero = numero + 1
-print('------------------------------------')
+print('\n------------------------------------\n')
 
 # Ex 2
 print('\033[97;40mExemplo 2: while numero < 10, print(numero), numero = numero + 1:\033[0m')
 while resposta != 'sim':
     resposta = input('Já acabou Jéssica? ')
 
-print('------------------------------------')
+print('\n------------------------------------\n')

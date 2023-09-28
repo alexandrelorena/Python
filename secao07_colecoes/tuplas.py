@@ -38,14 +38,14 @@ print(type(tupla5))
 (4, ) -> É tupla
 4, -> É tupla
 """
-print('-----------------Tupla dinâmica com range------------------')
+print('\n-----------------Tupla dinâmica com range------------------\n')
 
 #  Tupla dinâmica com range
 tupla = tuple(range(11))
 print(tupla)
 print(type(tupla))
 
-print('-----------------Desempacotamento de tupla-------------------')
+print('\n-----------------Desempacotamento de tupla-------------------\n')
 
 #  Desempacotamento de tupla
 
@@ -59,7 +59,7 @@ print(type(escola))
 print(curso)
 print(type(curso))
 
-print('---------------------Observações---------------------')
+print('\n---------------------Observações---------------------\n')
 
 #  Métodos para adição e remoção de elementos nas tuplas não existe, pois são imutaveis;
 # Soma, Valor Máximo, Valor mínimo e tamanho  somente se os valores forem todos inteiros ou reais,
@@ -70,7 +70,7 @@ print(max(tupla))
 print(min(tupla))
 print(len(tupla))
 
-print('-----------------Concatenação de tuplas --------------------')
+print('\n-----------------Concatenação de tuplas --------------------\n')
 
 #  Concatenação de tuplas
 
@@ -94,7 +94,7 @@ print(tupla2)
 tupla1 = tupla1 + tupla2  # Tuplas são imutáveis mas podemos sobrescrever seus valores.
 print(tupla1)
 
-print('---------------Verificar elemento-------------------')
+print('\n---------------Verificar elemento-------------------\n')
 
 # Verificar se elemento está contido na tupla
 
@@ -102,7 +102,7 @@ tupla = (1, 2, 3)
 
 print(4 in tupla)  # True or False
 
-print('---------------Iterando sobre uma tupla-------------------')
+print('\n---------------Iterando sobre uma tupla-------------------\n')
 
 tupla = (1, 2, 3)
 
@@ -112,7 +112,7 @@ for n in tupla:
 for indice, valor in enumerate(tupla):
     print(indice, valor)
 
-print('---------------Contando elementos-------------------')
+print('\n---------------Contando elementos-------------------\n')
 
 #  Contando elementos dentro de uma tupla
 
@@ -125,7 +125,7 @@ print(escola)
 
 print(escola.count('e'))
 
-print('---------------Contando elementos-------------------')
+print('\n---------------Contando elementos-------------------\n')
 
 #  SEMPRE Utilizar Tuplas em dados que não irão precisar de alteração.
 #  Exemplo 1

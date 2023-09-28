@@ -18,7 +18,7 @@ else:
     print('Você precis ativar sua conta. Por favor, cheque seu e-mail')
 
 
-print('--------------------------')
+print('\n--------------------------\n')
 
 
 if ativo or logado:
@@ -27,7 +27,7 @@ else:
     print('Você precisa ativar sua conta. Por favor, cheque seu e-mail')
 
 
-print('--------------------------')
+print('\n--------------------------\n')
 
 
 if not ativo:
@@ -36,7 +36,7 @@ else:
     print('Bem-vindo usuário!')
 
 
-print('--------------------------')
+print('\n--------------------------\n')
 
 
 if ativo:
@@ -45,8 +45,8 @@ else:
     print('Você precis ativar sua conta. Por favor, cheque seu e-mail')
 
 
-print('--------------------------')
+print('\n--------------------------\n')
 
 print(ativo is False)
 
-print('--------------------------')
+print('\n--------------------------\n')

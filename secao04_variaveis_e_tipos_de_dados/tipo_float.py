@@ -46,5 +46,5 @@ variavel = 5j
 print(variavel)
 print("o tipo da variável", variavel, 'é: ',  type(variavel))
 
-variavel = variavel **2
+variavel = variavel ** 2
 print(variavel)

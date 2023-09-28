@@ -59,6 +59,6 @@ int(idade) => cast
 Cast é a conversão de um tipo de dado para outro.
 
 """
-print("------------------------------------------")
+print('\n----------------------------------------\n')
 print(f'{nome.title()} tem {idade} anos e nasceu em {2023 - idade}')  # int(idade) => cast
-print("------------------------------------------")
+print('\n----------------------------------------\n')

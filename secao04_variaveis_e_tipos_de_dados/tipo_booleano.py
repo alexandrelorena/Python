@@ -19,7 +19,7 @@ Operações básicas
 Fazendo a negação, se o valor booleano for verdadeiro o resultado será falso.
 Se for falso, o resultado será verdadeiro.
 """
-print("------- NOT --------")
+print('\n------- NOT --------\n')
 print(not ativo)
 
 # Ou (or):Um ou outro deve ser vetdadeiro.
@@ -32,7 +32,7 @@ False or True -> True
 False or False -> False
 
 """
-print("------- OR --------")
+print('\n------- OR --------\n')
 print(True or True)
 print(True or False)
 print(False or True)
@@ -48,12 +48,12 @@ True and False -> FFalse
 False and True -> False
 False and False -> False
 """
-print("------- AND --------")
+print('\n------- AND --------\n')
 print(True and True)
 print(True and False)
 print(False and True)
 print(False and False)
-print("---------------")
+print('\n-------------\n')
 
 # Números
 

@@ -16,7 +16,7 @@ Diferenças  entre Conjuntos (Sets) e Mapas (Dicionários) em Python:
     - Um conjunto tem apenas valor;
 
 """
-print("-------------Definindo um conjunto-Forma 1------------")
+print('\n-------------Definindo um conjunto-Forma 1------------\n')
 
 s = {1, 2, 3, 4, 5, 5, 6, 7, 2, 3}  # temos valores repetidos
 
@@ -27,7 +27,7 @@ print(type(s))
 
 # O conjunto ignora itens duplicados sem gerar erro.
 
-print("---------------Forma 2 - mais comum-----------------")
+print('\n---------------Forma 2 - mais comum-----------------\n')
 # Forma 2 - mais comum
 
 s = {1, 2, 3, 4, 5, 5}
@@ -39,28 +39,28 @@ if 3 in s:
 else:
     print('Não tem o 3')
 
-print("----------------set de string-------------------")
+print('\n----------------set de string-------------------\n')
 
 #  set de string
 s = set('Gek Univerzity')
 print('Set de String: ', s)
 print(type(s))
 
-print("----------------set de lista-------------------")
+print('\n----------------set de lista-------------------\n')
 
 #  set de lista
 lista = [1, 2, 3, 4, 5, 6, 7, 4, 3, 2]  # O conjunto ignora itens duplicados
 print('Set de Lista: ', set(lista))
 print(type(lista))
 
-print("----------------set de tupla-------------------")
+print('\n----------------set de tupla-------------------\n')
 
 #  set de tupla
 tupla = (1, 2, 3, 4, 5, 6, 7)  # O conjunto ignora itens duplicados
 print('Set de Tupla: ', set(tupla))
 print(type(tupla))
 
-print("----------Não há ordem ou duplicados em Conjuntos-----------")
+print('\n----------Não há ordem ou duplicados em Conjuntos-----------\n')
 
 # Não há ordem ou duplicados em Conjuntos
 
@@ -76,7 +76,7 @@ print(f'Dicionario: {dicionario} >> com {len(dicionario)} elementos')  # não ac
 conjunto = {99, 2, 34, 23, 2, 12, 1, 44, 5, 34}
 print(f'Conjunto: {conjunto} >> com {len(conjunto)} elementos')  # não aceitam valores duplicados
 
-print("----------Em SETS podemos misturar dados-----------")
+print('\n----------Em SETS podemos misturar dados-----------\n')
 
 #  Em SETS podemos misturar dados como em todo conjunto Python
 
@@ -84,13 +84,13 @@ s = {1, 'b', True, 34.22, 44}
 print(s)
 print(type(s))
 
-print("----------iterando Set-----------")
+print('\n----------iterando Set-----------\n')
 #  iterando Set
 
 for valor in s:
     print(valor)
 
-print("----------usos interessantes com Set-----------")
+print('\n----------usos interessantes com Set-----------\n')
 
 #  lista
 cidades = ['Belo Horizonte', 'São Paulo', 'Campo Grande', 'Cuiabá', 'Campo Grande', 'São Paulo', 'Cuiabá']
@@ -100,7 +100,7 @@ print(type(cidades))
 
 print(len(set(cidades)))  # printando o número da lista sem itens repeditos
 
-print("----------adicionando elementos em um conjunto-----------")
+print('\n----------adicionando elementos em um conjunto-----------\n')
 
 s = {1, 2, 3}
 print(s)
@@ -111,7 +111,7 @@ print(s)  # conjuntos não são imutáveis como as tuplas
 
 #  duplicidade não gera erro, apenas é ignorado
 
-print("----------removendo elementos em um conjunto-----------")
+print('\n----------removendo elementos em um conjunto-----------\n')
 
 s = {1, 2, 3}
 print(s)
@@ -124,7 +124,7 @@ print(s)
 s.discard(2)  # não é gerado erro se o valor não for encontrado
 print(s)
 
-print("----------copiando um conjunto para outro-----------")
+print('\n----------copiando um conjunto para outro-----------\n')
 s = {1, 2, 3}
 
 #  Forma 1 - Deep Copy
@@ -145,7 +145,7 @@ novo.add(4)
 print(novo)
 print(s)
 
-print("----------removendo um item de um conjunto -----------")
+print('\n----------removendo um item de um conjunto -----------\n')
 
 s = {1, 2, 3}
 print(s)
@@ -153,7 +153,7 @@ print(type(s))
 s.clear()
 print(s)
 
-print("----------Métodos matemáticos de Conjuntos 1-----------")
+print('\n----------Métodos matemáticos de Conjuntos 1-----------\n')
 
 estudantes_python = {'Marcos', 'Patricia', 'Ellen', 'Pedro', 'Julia', 'Guilherme'}
 estudantes_java = {'Fernando', 'Gustavo', 'Julia', 'Ana', 'Patricia'}
@@ -173,7 +173,7 @@ print('Únicos com union >>', unicos1)
 unicos2 = estudantes_python | estudantes_java
 print('Únicos com | (pipe) >>', unicos2)
 
-print("----------Métodos matemáticos de Conjuntos 2----------")
+print('\n----------Métodos matemáticos de Conjuntos 2----------\n')
 
 # Forma 1 - Intersection
 
@@ -188,7 +188,7 @@ print(ambos2)
 ambos2 = estudantes_python & estudantes_java
 print('Ambos com & >>', ambos2)
 
-print("----------Métodos matemáticos de Conjuntos 3----------")
+print('\n----------Métodos matemáticos de Conjuntos 3----------\n')
 
 #  Forma 1 - difference
 
@@ -198,7 +198,7 @@ print('Só python >>', so_python)
 so_java = estudantes_java.difference(estudantes_python)
 print('Só java >>', so_java)
 
-print('--------------- Soma, valor máximo, valor mínimo, tamanho ---------------- ')
+print('\n--------------- Soma, valor máximo, valor mínimo, tamanho ----------------\n')
 
 s = {1, 2, 3, 4, 5, 6}
 

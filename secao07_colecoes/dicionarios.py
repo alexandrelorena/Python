@@ -7,7 +7,7 @@ dicionarios (ou mapas, em algumas linguagens de programação.
 - chave e valor separados por :  'chave:valor',
 - qualquer tipo de dados
 """
-print("-----------------------Criação de dicionários---------------------------")
+print('\n---------------------Criação de dicionários---------------------------\n')
 # Forma 1 (mais comum)
 paises = {'br': 'Brasil', 'eua': 'Estados Unidos', 'py': 'Paraguay'}
 print(paises)
@@ -18,7 +18,7 @@ paises = dict(br='Brasil', eua='Estados Unidos', py='Paraguay')
 print(paises)
 print(type(paises))
 
-print("-----------------------Acessando elementos---------------------------")
+print('\n---------------------Acessando elementos---------------------------\n')
 paises = {'br': 'Brasil', 'eua': 'Estados Unidos', 'py': 'Paraguay'}
 
 # Forma 1 - via chave
@@ -41,7 +41,7 @@ print('br' in paises)
 print('ru' in paises)
 print('Estados Unidos' in paises)
 
-print("-----------------------Dicionário com tupla---------------------------")
+print('\n---------------------Dicionário com tupla---------------------------\n')
 
 localidades = {
     (35.6895, 39.6917): 'Escritório em Tókio',
@@ -52,7 +52,7 @@ localidades = {
 print(localidades)
 print(type(localidades))
 
-print("-----------------------Adicionar elementos em um dicionário---------------------------")
+print('\n---------------------Adicionar elementos em um dicionário---------------------------\n')
 
 receita = {'jan': 100, 'fev': 120, 'mar': 300}
 
@@ -73,7 +73,7 @@ receita.update(novo_dado)  # receita.update({'mai': 200})
 
 print(receita)
 
-print("-----------------------Atualizando dados em um dicionário---------------------------")
+print('\n---------------------Atualizando dados em um dicionário---------------------------\n')
 
 # Forma 1
 
@@ -87,7 +87,7 @@ receita.update({'mai': 600})
 
 print(receita)
 
-print("-----------------------Remover dados em um dicionário---------------------------")
+print('\n---------------------Remover dados em um dicionário---------------------------\n')
 
 receita = {'jan': 100, 'fev': 120, 'mar': 300}
 
@@ -107,7 +107,7 @@ del receita['fev']  # caso a chave não exista, será gerado KeyError
 
 print(receita)
 
-print("-----------------------Métodos de dicionário---------------------------")
+print('\n---------------------Métodos de dicionário---------------------------\n')
 
 d = dict(a=1, b=2, c=3)
 
@@ -125,7 +125,7 @@ d = dict(a=1, b=2, c=3)
 print(d)
 print(type(d))
 
-print("-----------------------copiando um dicionário para outro - Forma 1 - Deep Copy---------------------------")
+print('\n---------------------copiando um dicionário para outro - Forma 1 - Deep Copy---------------------------\n')
 
 novo = d.copy()
 
@@ -136,7 +136,7 @@ novo['d'] = 4
 print(d)
 print(novo)
 
-print("-----------------------copiando um dicionário para outro - Forma 2 - Shallow Coppy---------------------------")
+print('\n---------------------copiando um dicionário para outro - Forma 2 - Shallow Coppy---------------------------\n')
 # ambos são alterados no Shallow Copy
 novo = d
 print(novo)
@@ -146,7 +146,7 @@ novo['d'] = 4
 print(d)
 print(novo)
 
-print("-----------------------Forma não usual de criação de dicionário---------------------------")
+print('\n---------------------Forma não usual de criação de dicionário---------------------------\n')
 
 outro = {}.fromkeys('a', 'b')
 
@@ -169,7 +169,7 @@ veja = {}.fromkeys(range(1, 11), 'novo')
 print(veja)
 print(type(veja))
 
-print('--------------- Soma, valor máximo, valor mínimo, tamanho ---------------- ')
+print('\n--------------- Soma, valor máximo, valor mínimo, tamanho ----------------\n')
 
 mat = {1, 2, 3, 4, 5, 6}
 

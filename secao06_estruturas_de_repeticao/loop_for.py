@@ -28,12 +28,12 @@ numeros = range(1, 10)  # Temos que transformar em uma lista
 
 for letra in nome:
     print(letra)
-print('--------------------------------------------------------')
+print('\n--------------------------------------------------------\n')
 
 #  Exemplo de for 2 (iterando sobre uma lista)
 for numero in lista:
     print(numero)
-print('--------------------------------------------------------')
+print('\n--------------------------------------------------------\n')
 
 #  Exemplo de for 3 (iterando sobre um range)
 """
@@ -43,7 +43,7 @@ OBS: O valor final não é inclusive.
 """
 for numero in range(1, 10):
     print(numero)
-print('--------------------------------------------------------')
+print('\n--------------------------------------------------------\n')
 
 #  Índice
 """
@@ -53,25 +53,25 @@ Enumerate:
 """
 for indice, letra in enumerate(nome):
     print(nome[indice])
-print('--------------------------------------------------------')
+print('\n--------------------------------------------------------\n')
 
 for indice, letra in enumerate(nome):
     print(letra)
-print('--------------------------------------------------------')
+print('\n--------------------------------------------------------\n')
 
 for _, letra in enumerate(nome):  # '_,' descarta o índice.
     print(letra)
-print('--------------------------------------------------------')
+print('\n--------------------------------------------------------\n')
 
 for valor in enumerate(nome):
     print(valor)
-print('--------------------------------------------------------')
+print('\n--------------------------------------------------------\n')
 
 """qtd = int(input('Quantas vezes esse loop deve rodar? '))
 
 for n in range(1, qtd):
     print(f'Imprimindo {n}')
-print('--------------------------------------------------------')
+print('\n--------------------------------------------------------\n')
 
 soma = 0
 
@@ -79,12 +79,12 @@ for n in range(1, qtd+1):
     num = int(input(f'Informe o {n}/{qtd} valor: '))
     soma = soma + num
 print(f'A soma é {soma}')
-print('--------------------------------------------------------')"""
+print('\n--------------------------------------------------------\n')"""
 
 nome = 'Geek University'
 for letra in nome:
     print(letra, end='')  # "end=''" evita pular linha
-print('\n--------------------------------------------------------')
+print('\n--------------------------------------------------------\n')
 
 # Unicode
 """ 
@@ -94,10 +94,10 @@ Modificado: U0001F60D  U0001F680
 
 for num in range(1, 11):
     print('\U0001F680' * num, '\U0001F60D' * num)
-# print('--------------------------------------------------------')
+# print('\n--------------------------------------------------------\n')
 
 for _ in range(3):
     for num in range(10, 0, -1):
         print('\U0001F680' * num, '\U0001F60D' * num)
-print('--------------------------------------------------------')
+print('\n--------------------------------------------------------\n')
 # print(('\U0001F680' * num)[::-1])

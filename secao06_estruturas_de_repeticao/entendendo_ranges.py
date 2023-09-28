@@ -37,22 +37,22 @@ OBS: valor_de_parada não inclusive (valor_de_inicio especificado pelo usuário,
 print('\033[97;40mForma 1: for num in range(11):\033[0m')
 for num in range(11):
     print(num)
-print('------------------------------------')
+print('\n------------------------------------\n')
 
 # Forma 2
 print('\033[97;40mForma 2: for num in range(1, 11):\033[0m')
 for num in range(1, 11):
     print(num)
-print('------------------------------------')
+print('\n------------------------------------\n')
 
 # Forma 3
 print('\033[97;40mForma 3: for num in range(1, 10, 2):\033[0m')
 for num in range(1, 10, 2):
     print(num)
-print('------------------------------------')
+print('\n------------------------------------\n')
 
 # Forma 4 (contagem regressiva)
 print('\033[97;40mForma 4: for num in range(10, -1, -1):\033[0m')
 for num in range(10, -1, -1):
     print(num)
-print('------------------------------------')
+print('\n------------------------------------\n')

@@ -12,7 +12,7 @@ for numero in range(1, 11):
     else:
         print(numero)
 print('saí do loop')
-print('-------------------')
+print('\n-------------------\n')
 
 # Exemplo 2
 
@@ -21,4 +21,4 @@ while True:
     if comando == 'sair':
         break
 print('saí do loop')
-print('-------------------')
+print('\n-------------------\n')

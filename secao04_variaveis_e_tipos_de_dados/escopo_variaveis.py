@@ -16,7 +16,7 @@ print(numero)
 print(type(numero))
 
 if numero > 10:
-    novo = numero + 10 # ex de escopo local
+    novo = numero + 10  # ex de escopo local
     print(novo)
 
 # print(novo)
