@@ -57,6 +57,6 @@ c_para_f = lambda dado: (dado[0], (9/5) * dado[1] + 32)
 # 1º forma
 print(list(map(c_para_f, cidades)))
 
-# 1º forma
+# 2º forma
 print(list(map(lambda dado: (dado[0], (9/5) * dado[1] + 32), cidades)))
 
