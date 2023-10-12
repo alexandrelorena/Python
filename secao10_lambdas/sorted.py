@@ -78,5 +78,5 @@ dicionario_ordenado = dict(sorted(dicionario.items(), key=lambda item: item[1]))
 
 print(f'Ordenando com sorted, por valor: {dicionario_ordenado}')
 
-# ------------------------------ ↓ por valor ↓ -------------------------------------
+# ------------------------------ ↓  ↓ -------------------------------------
 
