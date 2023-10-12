@@ -60,6 +60,7 @@ print(type(numeros))
 dicionario = {indice: valor for indice, valor in enumerate(numeros)}
 print(dicionario)
 print(type(dicionario))
+
 # ------------------------------ ↓ por chave ↓ -------------------------------------
 
 print(f"{'↓ por chave ↓'.center(70)}\n")
@@ -68,6 +69,7 @@ print(f'Ordenando com sorted, por chave: {sorted(dicionario)}\n')
 
 print(numeros)
 print(type(numeros))
+
 # ------------------------------ ↓ por valor ↓ -------------------------------------
 
 print(f"{'↓ por valor ↓'.center(70)}\n")
