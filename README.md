@@ -57,4 +57,3 @@
     onmouseout="this.getElementsByTagName('img')[0].src='//cdn.simpleicons.org/discord/gray'">
     <img src="https://cdn.simpleicons.org/discord" width="32" height="32"></a>  
 
-
