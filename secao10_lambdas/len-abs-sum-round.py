@@ -12,7 +12,6 @@ Round => Retorna um número arredondado para n dígito de precisão após a casa
 Se a precisão não for informada, retorna o inteiro mais próximo da entrada.
 
 """
-
 # ------------------------------ ↓ len-abs-sum-round ↓ ----------------------------
 
 print(f"\033[33m{'-' * 70}\n\033[94m{'↓ len-abs-sum-round ↓'.center(70)}\033[33m\n{'-' * 70}\033[0m\n")
