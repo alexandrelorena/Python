@@ -91,3 +91,6 @@ try:
 except TypeError as err:
     error_message = f'A aplicação gerou o seguinte erro: {err}'
     print(f'try: \nlen(5) \n\033[31mexcept TypeError as err: \033[0m \nprint("{error_message}")')
+
+print(f'\n\033[37m--------------------------------------------------------------------------------'
+      f'\n\033[0m')
