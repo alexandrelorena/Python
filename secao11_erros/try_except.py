@@ -37,6 +37,37 @@ Tratando de forma correta:
         except TypeError:
             print("Deu algum problema")
 
+    c)  try:
+            len(5)
+        except NameError as erra:
+            print(f'Deu NameError: {erra}')
+        except TypeError as errb:
+            print(f'Deu TypeError: {errb}')
+
+    d)  try:
+            geek()
+        except NameError as erra:
+            print(f'Deu NameError: {erra}')
+        except TypeError as errb:
+            print(f'Deu TypeError: {errb}')
+        except:
+            print(f'Deu um erro diferente')
+
+    e)  def pega_valor(dicionario, chave):
+            try:
+                 return dicionario[chave]
+            except KeyError:
+                 return None
+            except TypeError:
+                return None
+            except SyntaxError:
+                return None
+
+
+dic = {"nome": "Geek"}
+
+print(pega_valor(dic, "nome"))
+
 """
 
 print(f"\033[33m{'-' * 80}\n\033[94m{'↓ Try / Except ↓'.center(80)}\033[33m\n{'-' * 80}"
@@ -75,7 +106,7 @@ print(f'try: \n    len(5) \n\033[31mexcept TypeError: \033[0m \n    print("Você
 print(f'\033[37m-------------------------- ↓ \033[34mtry/except - exemplo 4\033[37m ↓ --------------------------'
       f'\n\033[0m')
 
-#  Forma 1
+#  Forma 1 - genérica
 print(f'\033[37m--------------------------------- ↓ Forma 1\033[37m ↓ ----------------------------------'
       f'\n\033[0m')
 try:
@@ -83,7 +114,7 @@ try:
 except TypeError as err:
     print(f'A aplicação gerou o seguinte erro: {err}')  # Geralmente guardado em Logs.
 
-#  Forma 2
+#  Forma 2 - específica
 print(f'\n\033[37m--------------------------------- ↓ Forma 2\033[37m ↓ ----------------------------------'
       f'\n\033[0m')
 try:
@@ -94,3 +125,40 @@ except TypeError as err:
 
 print(f'\n\033[37m--------------------------------------------------------------------------------'
       f'\n\033[0m')
+
+try:
+    len(5)
+except NameError as erra:
+    print(f'Deu NameError: {erra}')
+except TypeError as errb:
+    print(f'Deu TypeError: {errb}')
+
+"""try:
+    geek()
+except NameError as erra:
+    print(f'Deu NameError: {erra}')
+except TypeError as errb:
+    print(f'Deu TypeError: {errb}')
+except:
+    print(f'Deu um erro diferente')
+"""
+# ------------------------------------------ ↓ try/except - em funções ↓ --------------------------------------
+
+print(f'\n\033[37m-------------------------- ↓ \033[34mtry/except - em funções\033[37m ↓ -------------------------'
+      f'\n\033[0m')
+
+
+def pega_valor(dicionario, chave):
+    try:
+        return dicionario[chave]
+    except KeyError:
+        return None
+    except TypeError:
+        return None
+    except SyntaxError:
+        return None
+
+
+dic = {"nome": "Geek"}
+
+print(pega_valor(dic, "nome"))
