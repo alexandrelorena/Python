@@ -146,7 +146,7 @@ print('\n--------------Erro comum no uso do return------------------\n')
 print('\n---------------- ↓ Errado ↓ ----------------\n')
 
 
-def soma_impares(numeros):
+"""def soma_impares(numeros):
     total = 0
     for num in numeros:
         if num % 2 != 0:
@@ -160,7 +160,7 @@ print(type(lista))
 
 tupla = 1, 2, 3, 4, 5, 6, 7
 print(soma_impares(tupla))
-print(type(tupla))
+print(type(tupla))"""
 
 print('\n---------------- ↓ Certo ↓ ----------------\n')
 

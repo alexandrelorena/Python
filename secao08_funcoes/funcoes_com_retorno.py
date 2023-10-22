@@ -18,27 +18,28 @@ ret_pop = numeros.pop()
 
 print(f'Retorno de pop: {ret_pop}')
 
-ret_pr = print(numeros)   # não retorna nenhum valor >> none
+"""ret_pr = print(numeros)   # não retorna nenhum valor >> none
 
-print(f'Retorno de print: {ret_pr}')
+print(f'Retorno de print: {ret_pr}')"""
 
 #  Exemplo de função
-print('\n---------- Sem retorno-----------\n")
+print("\n---------- Sem retorno-----------\n")
 
 
 def quadrado_de_7():
     print(7 * 7)
 
 
-ret = quadrado_de_7()  # não retorna nenhum valor >> none
-
-print(f'Retorno: {ret}')
+"""ret = quadrado_de_7()  # não retorna nenhum valor >> none
 
 
-print('\n---------- Retornando valor-----------\n")
+print(f'Retorno: {ret}')"""
 
 
-def quadrado_de_7():
+print("\n---------- Retornando valor-----------\n")
+
+
+def sete_ao_quadrado():
     return 7 * 7
 
 # variável recebendo retorno da função
@@ -46,15 +47,15 @@ def quadrado_de_7():
 # Forma 1
 
 
-ret = quadrado_de_7()
+ret = sete_ao_quadrado()
 
 
 print(f'Retorno: {ret}')
 
 # Forma 2
-print(f'Retorno: {quadrado_de_7() + 1}')  # fazendo operação matemática
+print(f'Retorno: {sete_ao_quadrado() + 1}')  # fazendo operação matemática
 
-print('\n---------- Refatorando a primeira função-----------\n")
+print("\n---------- Refatorando a primeira função-----------\n")
 
 
 def diz_oi():
@@ -107,7 +108,7 @@ print(outra_funcao())  # imprime no formato de tupla
 print(type(outra_funcao()))
 # <class 'tuple'>
 
-print('\n---------- Função para jogar a moeda-----------\n")
+print("\n---------- Função para jogar a moeda-----------\n")
 
 
 from random import random
@@ -123,7 +124,7 @@ def joga_moeda():  # gera um número pseudo randômico entre 0 e 1
 
 print(joga_moeda())
 
-print('\n---------- refatorando a Função joga_moeda-----------\n")
+print("\n---------- refatorando a Função joga_moeda-----------\n")
 
 
 def joga_moeda():  # gera um número pseudo randômico entre 0 e 1
@@ -137,7 +138,7 @@ def joga_moeda():  # gera um número pseudo randômico entre 0 e 1
 print(joga_moeda())
 
 
-print('\n---------- codificação desnecessária-----------\n")
+print("\n---------- codificação desnecessária-----------\n")
 
 
 def eh_impar():
