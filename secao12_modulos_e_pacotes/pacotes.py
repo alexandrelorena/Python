@@ -3,7 +3,6 @@ Pacotes
 
 - Módulo >> arquivo Pythonque podem ter diversas funções para utilizar;
 - Pacotes são diretórios contendo coleção de módulos
-
 """
 
 from colorama import Fore
@@ -25,8 +24,6 @@ print(Fore.LIGHTGREEN_EX + "from geek import geek1" + Fore.YELLOW + " >> importa
 
 print(Fore.BLUE + "print(geek1.pi)", end=' >> ' + Fore.CYAN + f'pi = {str(geek1.pi)}' + Fore.LIGHTBLUE_EX +
                   ' >> pi está no arquivo geek1'"\n\n")  # convertido .float  para string
-
-# print(Fore.CYAN + f'pi = {str(geek1.pi)}' + Fore.LIGHTBLUE_EX + ' >> pi está no arquivo geek1'"\n")
 
 print(Fore.LIGHTGREEN_EX + f'a + b = {geek1.funcao1(4, 6)}' + Fore.MAGENTA + ' >> função1 está no arquivo geek1\n')
 

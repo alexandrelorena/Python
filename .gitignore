@@ -2,3 +2,5 @@
 .idea/pythonProject.iml
 geek/__pycache__/
 /geek/university/__pycache__/
+__pycache__/
+secao08_funcoes/__pycache__/
