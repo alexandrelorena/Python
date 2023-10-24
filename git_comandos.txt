@@ -1,0 +1,13 @@
+
+gitignore:
+
+(pyprojects) C:\Users\Usuario\PycharmProjects\pythonProject>git reset HEAD .gitignore .idea/misc.xml .idea/pythonProject.iml
+Unstaged changes after reset:
+M       .gitignore
+M       .idea/misc.xml
+M       .idea/pythonProject.iml
+M       secao13_leitura_e_escrita_de_arquivos/seek_e_cursos.py
+M       texto.txt
+
+git checkout -- .gitignore .idea/misc.xml .idea/pythonProject.iml
+-----------------------------------------------------------------------------------------------------------------------
