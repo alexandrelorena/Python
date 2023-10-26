@@ -1,8 +1,8 @@
 """
 Bloco with
 
-O bloco with é utilizado para criar um contexto de trabalho, onde os recursos utilizados são fechados após o bloco with.
-
+O bloco with é utilizado para criar um contexto de trabalho, onde os recursos utilizados
+são fechados após o bloco with.
 
 """
 

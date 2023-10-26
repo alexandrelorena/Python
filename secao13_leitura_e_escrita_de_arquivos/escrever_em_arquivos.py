@@ -51,22 +51,51 @@ print(f"{Fore.BLACK}{'-' * 145}\033[0m")
 
 # arquivo = open('../../pythonProject/texto.txt', 'r', encoding='utf-8')
 
+# -------------------------------------------- ↓ ------------ ↓ --------------------------------------------
+
 print(Fore.CYAN + f"{'↓ Escrevendo em arquivos - forma Pythônica ↓'.center(145)}\n"f"{Fore.CYAN}{'-' * 145}\033[0m\n")
 
-print(Fore.WHITE + f'with open(../../pythonProject/novo.txt', 'w', 'as arquivo\narquivo.write("Novos dados")\n'
-                                                                   'arquivo.write("outros dados") \n')
+print(Fore.GREEN + f'with open(../../pythonProject/novo.txt' ', w' ', encoding=utf-8 as arquivo\n' + Fore.LIGHTBLUE_EX +
+      'arquivo.write("Novos dados")\n' + Fore.LIGHTRED_EX + 'arquivo.write("outros dados") \n')
 
-with open('../../pythonProject/novo.txt', 'w') as arquivo:  # 'w' -> write -> modo para escrita
+with open('../../pythonProject/novo.txt', 'w', encoding='utf-8') as arquivo:  # 'w' -> write -> modo para escrita
     arquivo.write('Novos dados\n')
     arquivo.write('outros dados\n')
 
-print(arquivo.write)
+# print(arquivo.write)
+
+# -------------------------------------------- ↓ ------------ ↓ --------------------------------------------
+
+print(Fore.BLUE + f'with open(../../pythonProject/geek.txt' ', w' ', encoding=utf-8) '
+                  'as arquivo:\n' + Fore.BLACK + 'arquivo.write("Geek / n * 1000")\n')
+
+with open('../../pythonProject/geek.txt', 'w', encoding='utf-8') as arquivo:
+    arquivo.write('Geek\n' * 1000)
+
+# -------------------------------------------- ↓ ------------ ↓ --------------------------------------------
+
+print(Fore.MAGENTA + f"{Fore.YELLOW}{'-' * 145}\n{'↓ Escrevendo em arquivos - Pythônica com Loop ↓'.center(145)}\n"
+                     f""f""f"{Fore.YELLOW}{'-' * 145}\033[0m"f"\n")
+
+with open('frutas.txt', 'w', encoding='utf-8') as arquivo:
+    while True:
+        fruta = input('Informe uma fruta ou digite sair!')
+        if fruta != 'sair':  # precisa de tratamento ao digitar maisúsculas
+            arquivo.write(fruta)
+            arquivo.write('\n')
+        else:
+            break
+
+# -------------------------------------------- ↓ ------------ ↓ --------------------------------------------
 
 print(Fore.MAGENTA + f"\n{Fore.MAGENTA}{'-' * 145}\n{'↓ Escrevendo em arquivos - forma Não Pythônica ↓'.center(145)}\n"
                      f""f"{Fore.MAGENTA}{'-' * 145}\033[0m"f"\n")
 
-print(Fore.WHITE + f'arquivo = open(../../pythonProject/mais.txt', 'w', 'as arquivo\narquivo.write("Um texto qualquer")\narquivo.write("outros dados") \n')
+arquivo = open('../../pythonProject/mais.txt', 'w', encoding='utf-8')
+arquivo.write('Um texto qualquer\n')  # é preciso pular linha para escrever o outro texto.
+arquivo.write("Mais um texto")
+print(Fore.CYAN + f'arquivo = open(../../pythonProject/mais.txt'', w, encoding=utf-8)\n' + Fore.BLACK +
+      'arquivo.write("Um texto qualquer")')
+arquivo.close()
 
-arquivo = open('../../pythonProject/mais.txt', 'w')
-arquivo.write('Um texto qualquer.\n')
-arquivo.write('')
+# -------------------------------------------- ↓ ------------ ↓ --------------------------------------------
