@@ -97,5 +97,3 @@ arquivo.write("Mais um texto")
 print(Fore.CYAN + f'arquivo = open(../../pythonProject/mais.txt'', w, encoding=utf-8)\n' + Fore.BLACK +
       'arquivo.write("Um texto qualquer")')
 arquivo.close()
-
-# -------------------------------------------- ↓ ------------ ↓ --------------------------------------------
