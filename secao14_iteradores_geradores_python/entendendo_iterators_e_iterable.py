@@ -86,7 +86,3 @@ print("É a mesma coisa que:" + Fore.MAGENTA + "\nfor letra in nome:\n    print(
 
 for letra in nome:
     print(Fore.BLACK + f'{letra}')
-
-print(f"\n{Fore.CYAN}{'-' * 145}\033[0m\n" +
-      f"{Fore.CYAN} ↓ Deletando arquivos e diretórios - OBS: não vão para lixeira ↓"
-      .center(145) + f"\n{Fore.CYAN}{'-' * 145}\033[0m\n")
