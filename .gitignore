@@ -1,5 +1,4 @@
-.idea/misc.xml
-.idea/pythonProject.iml
+.idea/
 geek/__pycache__/
 /geek/university/__pycache__/
 __pycache__/
