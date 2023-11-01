@@ -26,7 +26,7 @@
 > - Projeto 2: Mercado;
 > - Projeto 3: Banco;
 > 
-> <br></span>
+> </span>
 
    <a href="mailto:alexandre.lorena@gmail.com"
     onmouseover="this.getElementsByTagName('img')[0].src='//cdn.simpleicons.org/gmail'"
