@@ -23,3 +23,18 @@ def imprimir_com_cores(iteravel):
             nome_atual = ''
 
     print(nome_atual)  # Imprimir o último nome
+
+
+def colorido(texto, color='white'):
+    texto_colorido = colored(texto, color)
+    print(texto_colorido)
+
+
+# Exemplo de uso:
+"""texto = 'Texto colorido'
+color = 'red'
+colorido(texto, color)
+"""
+
+
+

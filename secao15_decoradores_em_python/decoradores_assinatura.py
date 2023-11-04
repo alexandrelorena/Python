@@ -1,7 +1,7 @@
 from colorama import Fore, Back, init
-# from random import choice
 from secao08_funcoes.minhas_funcoes import imprimir_com_cores
 from termcolor import colored
+
 """
 Decorators com diferentes assinaturas.
 
@@ -193,7 +193,6 @@ print(Fore.YELLOW + "@verifica_primeiro_argumento('pizza')\ndef comida_favorita(
 
 @verifica_primeiro_argumento('pizza')
 def comida_favorita(*args):
-    # print(args)
     return args
 
 
