@@ -9,6 +9,7 @@ A assinatura de uma função compõe em seu retorno: o nome e o parâmetro de en
 - padrão de projeto : Decorator Pattern
 
 """
+
 # -------------------------------------------- ↓ Bloco título ↓ --------------------------------------------
 
 # Inicialize o Colorama
