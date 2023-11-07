@@ -105,8 +105,9 @@ console.print(f'[yellow]-' * 90)
 console.print(f'[bold white][center]' + texto_centralizado)
 console.print(f'[yellow]-' * 90)
 
-console.print("[red]class [white]Acesso:\n    def __init__(self, email, senha):\n"
-              "        self.email = email\n        self.__senha = senha\n")
+console.print("[red]class [blue]Acesso:\n    def __init__(self, email, senha):\n"
+              "        self.email = email\n        self.__senha = senha\n\n    def mostra_senha(self):\n        "
+              "print(self.__senha)\n")
 
 
 class Acesso:
@@ -115,10 +116,18 @@ class Acesso:
         self.email = email  # com 2 underscore no início do atributo, é privado. APENAS CONVENÇÃO
         self.__senha = senha  # com 2 underscore no início do atributo, é privado. APENAS CONVENÇÃO
 
-    @property
-    def acesso__senha(self):
-        return self._Acesso__senha
+    def mostra_senha(self):
+        print(self.__senha)
 
+    def mostra_email(self):
+        print(self.email)
+
+
+console.print("user = Acesso('user@gmail.com', '123456')\n")
+
+"""    @property
+    def acesso__senha(self):
+        return self._Acesso__senha"""
 
 user = Acesso('user@gmail.com', '123456')
 
@@ -129,5 +138,135 @@ console.print()
 
 # console.console.print(dir(user))
 
-console.print("[blue]console.print(user._Acesso__senha)\n")
-console.print(user.acesso__senha)  # Name Mangling
+console.print("[blue]user.mostra_senha()\n")
+# console.print(user.acesso__senha)  # Name Mangling
+user.mostra_senha()
+console.print()
+console.print("[blue]user.mostra_email()\n")
+user.mostra_email()
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+#  Atributos de Instância
+texto = 'Atributos de Instância'
+tamanho_desejado = 90  # Largura do bloco
+texto_centralizado = texto.center(tamanho_desejado)  # Centralize o texto
+console.print(f'[yellow]-' * 90)
+console.print(f'[bold white][center]' + texto_centralizado)
+console.print(f'[yellow]-' * 90)
+
+user1 = Acesso('user1@gmail.com', '654321')
+user2 = Acesso('user2@hotmail.com', '246835')
+
+user1.mostra_email()
+user1.mostra_senha()
+console.print()
+user2.mostra_email()
+user2.mostra_senha()
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+#  Atributos de Classe -> declarados diretamente na classe (fora do construtor).
+texto = 'Atributos de Classe'
+tamanho_desejado = 90  # Largura do bloco
+texto_centralizado = texto.center(tamanho_desejado)  # Centralize o texto
+console.print(f'[yellow]-' * 90)
+console.print(f'[bold white][center]' + texto_centralizado)
+console.print(f'[yellow]-' * 90)
+
+#  Refatorando a classe Produto:
+
+console.print("[red]class Produto:\n    imposto = 1.05 \n    contador = 0\n\n"
+              "    def __init__(self, nome, descricao, valor)\n        self.id = Produto.contador + 1\n"
+              "        self.nome = nome\n        self.descricao = descricao\n        "
+              "self.valor = (valor * Produto.imposto)\n        Produto.contador = self.id\n")
+
+console.print("[blue]p1 = Produto('PlayStation 4', 'Video game', 2300)\n")
+console.print("[blue]p2 = Produto('Xbox 5', 'Video game', 4500)\n")
+
+
+# noinspection PyRedeclaration
+class Produto:
+    # Atributo de classe => vale pra qualquer instãncia da classe
+    imposto = 1.05  # 0.05% de impost
+    contador = 0
+
+    def __init__(self, nome, descricao, valor):
+        self.id = Produto.contador + 1
+        self.nome = nome
+        self.descricao = descricao
+        self.valor = (valor * Produto.imposto)
+        Produto.contador = self.id
+
+
+p1 = Produto('PlayStation 4', 'Video game', 2300)
+p2 = Produto('Xbox 5', 'Video game', 4500)
+
+console.print("console.print{p1.imposto} [red]# acesso possível mas incorreto de um atributo de classe")
+console.print("console.print{p1.valor} [red]# acesso possível mas incorreto de um atributo de classe")
+
+console.print()
+
+console.print("console.print(Produto.imposto) [blue]# Acesso correto de um atributo de classe \n")
+console.print(f'[red]Imposto: {Produto.imposto}')  # Acesso correto de um atributo de classe
+
+console.print()
+
+console.print(f"{p1.id} - [cyan]Produto: [/cyan]{p1.nome} | [cyan]valor original: {p1.valor / Produto.imposto}[/cyan] |"
+              f" [cyan]valor com imposto: {p1.valor}[/cyan]")
+console.print(f"{p2.id} - [cyan]Produto: [/cyan]{p2.nome} | [cyan]valor original: {p2.valor / Produto.imposto}[/cyan] |"
+              f" [cyan]valor com imposto: {p2.valor}[/cyan]")
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+#  Atributos Dinâmicos -> atributo de instância que pode ser criado em tempo de execução.
+#  Exclusivo da instância que o criou.
+texto = 'Atributos Dinâmicos em tempo de execução'
+tamanho_desejado = 90  # Largura do bloco
+texto_centralizado = texto.center(tamanho_desejado)  # Centralize o texto
+console.print(f'[yellow]-' * 90)
+console.print(f'[bold white][center]' + texto_centralizado)
+console.print(f'[yellow]-' * 90)
+
+console.print("[blue]p3 = Produto('PlayStation 4', 'Video game', 2300)\n")
+console.print("[blue]p4 = Produto('Arroz', 'Mercearia', 5.99)\n")
+
+p3 = Produto('PlayStation 4', 'Video game', 2300)
+p4 = Produto('Arroz', 'Mercearia', 5.99)
+
+# Criando atributo dinâmico em tempo de execução
+console.print("[blue]p4.peso = '5kg'\n")
+p4.peso = '5kg'  # Note que na classe Produto não existe o atributo peso
+
+console.print("[cyan]console.print(f'Produto: {p2.nome}, Descrição: {p2.descricao}, Valor: {p2.valor}, Peso: {p4.peso}"
+              "')\n")
+console.print(f'Produto: {p2.nome}, Descrição: {p2.descricao}, Valor: {p2.valor}, Peso: {p4.peso}')
+
+# console.print(f'Produto: {p1.nome}, Descrição: {p1.descricao}, Valor: {p1.valor}, Peso: {p1.peso}')
+# AttributeError: 'Produto' object has no attribute 'peso'
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+texto = 'Deletando atributos'
+tamanho_desejado = 90  # Largura do bloco
+texto_centralizado = texto.center(tamanho_desejado)  # Centralize o texto
+console.print(f'[yellow]-' * 90)
+console.print(f'[bold white][center]' + texto_centralizado)
+console.print(f'[yellow]-' * 90)
+
+console.print(p3.__dict__)
+console.print(p4.__dict__)
+console.print()
+console.print("[blue]del p4.peso\n")
+console.print("[blue]del p4.valor\n")
+console.print("[blue]del p4.descricao\n")
+console.print("[blue]console.print(p3.__dict__)\n")
+console.print("[blue]console.print(p4.__dict__)\n")
+
+del p4.peso
+del p4.valor
+del p4.descricao
+console.print(p3.__dict__)
+console.print(p4.__dict__)
+console.print()
+console.print(Produto.__dict__)
