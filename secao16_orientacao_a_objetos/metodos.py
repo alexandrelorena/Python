@@ -28,7 +28,7 @@ from rich.console import Console
 # from rich.table import Table
 # from secao08_funcoes.minhas_funcoes import imprimir_com_cores
 # from colorama import Fore
-
+from passlib.hash import pbkdf2_sha256 as cryp
 # -------------------------------------------- ↓ Bloco título ↓ --------------------------------------------
 console = Console()
 
@@ -43,7 +43,7 @@ console.print(f'[on yellow][bold white][center]' + texto_centralizado)
 # -------------------------------------------- ↑ Bloco título ↑ --------------------------------------------
 
 # Classes com Atributo de Instância Públicos
-texto = 'Métodos de Classe'
+texto = 'Métodos de Instância'
 tamanho_desejado = 90  # Largura do bloco
 texto_centralizado = texto.center(tamanho_desejado)  # Centralize o texto
 console.print(f'[yellow]-' * 90)
@@ -52,7 +52,7 @@ console.print(f'[yellow]-' * 90)
 
 console.print("[green]class [blue]Lampada:\n\n    def __init__(self, cor, voltagem, luminosidade):\n        "
               "self.__cor = cor\n        self.__voltagem = voltagem\n        self.__luminosidade = luminosidade\n     "
-              "   self.__ligada = False\n\n")
+              "   self.__ligada = False\n")
 
 
 class Lampada:
@@ -90,20 +90,20 @@ class Produto:
 
     contador = 0
 
-    def __init__(self, nome, descricao, valor):
+    def __init__(self, nomeprod, descricao, valorprod):
         self.__id = Produto.contador
-        self.__nome = nome
+        self.__nomeprod = nomeprod
         self.__descricao = descricao
-        self.__valor = valor
+        self.__valorprod = valorprod
         Produto.contador += 1
 
     def desconto(self, porcentagem):
         """Retorna o valor do produto com o desconto"""
-        return (self.__valor * (100 - porcentagem)) / 100
+        return (self.__valorprod * (100 - porcentagem)) / 100
 
     def valor_com_desconto(self, porcentagem):
         """Retorna o valor do desconto em Reais"""
-        return self.__valor - self.desconto(porcentagem)
+        return self.__valorprod - self.desconto(porcentagem)
 
 
 p1 = Produto('PlayStation 4', 'Video Game', 2300)
@@ -114,25 +114,83 @@ console.print(f'[magenta]Valor do desconto: R${p1.valor_com_desconto(50):.2f}')
 
 console.print()
 
-console.print("[red]class [white]Usuario:\n    def __init__(self, nome, email, senha):\n"
-              "        self.nome = nome\n        self.email = email\n        self.senha = senha\n")
+console.print("[red]class [white]Usuario:\n    def __init__(self, nome, sobrenome, email, senha):\n"
+              "        self.nome = nome\n        self.__sobrenome = sobrenome\n        self.__email = email\n        "
+              "self.senha = senha\n\n    [yellow]def nome_completo(self):\n        "
+              "return f'{self.__nome} {self.__sobrenome}'\n")
+
+console.print("user1 = Usuario('Angelina', 'Jolie', 'angelina@gmail.com', '123456')")
+
+console.print("user2 = Usuario('Felicity', 'Jones', 'felicity@gmail.com', '654321')")
+
+console.print()
 
 
 class Usuario:
 
-    def __init__(self, nome, email, senha):
-        self.__nome = nome
-        self.__email = email
-        self.__senha = senha
+    def __init__(self, nomeuser, sobrenomeuser, emailuser, senhauser):
+        self.__nomeuser = nomeuser
+        self.__sobrenomeuser = sobrenomeuser
+        self.__emailuser = emailuser
+        self.__senhauser = cryp.hash(senhauser, rounds=2000000, salt_size=16)
 
-    # def __correr__(self, metros):  # não recomendado criar métodos com nomes com dunder
-    #     print(f'{self.__nome} está correndo {metros} metros')
+    def nome_completo(self):
+        return f'{self.__nomeuser} {self.__sobrenomeuser}'
+
+    def checa_senha(self, senhauser):
+        if cryp.verify(senhauser, self.__senhauser):
+            return True
+        return False
 
 
-console.print()
+user1 = Usuario('Angelina', 'Jolie', 'angelina@gmail.com', '123456')
 
-console.print("[cyan]class [magenta]ContaCorrente:\n    def __init__(self, numero, limite, saldo):\n"
-              "        self.numero = numero\n        self.limite = limite\n        self.saldo = saldo\n")
-
+user2 = Usuario('Felicity', 'Jones', 'felicity@gmail.com', '654321')
 
 # ---------------------------------------------------------------------------------------------------------------------
+
+print(user1.nome_completo())  # o 'self' é o user1
+
+print(Usuario.nome_completo(user1))  # o passando a classe 'Usuario e a instância 'nome_completo'.
+
+print(user2.nome_completo())  # o 'self' é o user2
+
+# print(f'Senha User 1: {user1._Usuario__senha}')  # Acesso de forma ERRADA de um atributo de classe.
+#
+# print(f'Senha User 2: {user2._Usuario__senha}')  # Acesso de forma ERRADA de um atributo de classe.
+#
+
+nome = input('\n\nInforme o nome: ')
+sobrenome = input('Informe o sobrenome: ')
+email = input('Informe o email: ')
+senha = input('Informe a senha: ')
+confirma_senha = input('Confirme a senha: ')
+
+user = None
+
+if senha == confirma_senha:
+    user = Usuario(nome, sobrenome, email, senha)
+else:
+    print('Senha não confere!!!')
+    exit(1)
+
+print('Usuário criado com sucesso"')
+
+senha_acesso = input('Informe a senha para acesso: ')
+
+
+if user.checa_senha(senha_acesso):
+    print('Acesso permitido')
+
+else:
+    print('Acesso negado!!!')
+
+
+texto = 'Métodos de Classe'
+tamanho_desejado = 90  # Largura do bloco
+texto_centralizado = texto.center(tamanho_desejado)  # Centralize o texto
+console.print(f'[yellow]-' * 90)
+console.print(f'[bold white][center]' + texto_centralizado)
+console.print(f'[yellow]-' * 90)
+
+# print(f'Senha User Criptografada: {user._Usuario__senha}')
