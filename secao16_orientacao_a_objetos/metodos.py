@@ -14,6 +14,10 @@ construir o objeto a partir da classe.
 
 * Não é recomendado criar métodos com nomes com dunder. Ex: def __correr__(self, metros):
 
+* Métodos de Classe usam Decorators
+
+* Métodos de classe são conhecidos como 'métodos estáticos' em outras linguagens.
+
 """
 
 # import shutil
@@ -160,7 +164,7 @@ print(user2.nome_completo())  # o 'self' é o user2
 # print(f'Senha User 2: {user2._Usuario__senha}')  # Acesso de forma ERRADA de um atributo de classe.
 #
 
-nome = input('\n\nInforme o nome: ')
+"""nome = input('\n\nInforme o nome: ')
 sobrenome = input('Informe o sobrenome: ')
 email = input('Informe o email: ')
 senha = input('Informe a senha: ')
@@ -184,7 +188,7 @@ if user.checa_senha(senha_acesso):
 
 else:
     print('Acesso negado!!!')
-
+"""
 
 texto = 'Métodos de Classe'
 tamanho_desejado = 90  # Largura do bloco
@@ -194,3 +198,108 @@ console.print(f'[bold white][center]' + texto_centralizado)
 console.print(f'[yellow]-' * 90)
 
 # print(f'Senha User Criptografada: {user._Usuario__senha}')
+
+console.print()
+
+console.print("[red]class [white]Usuario:\n\n    contador = 0\n\n    [green]@classmethod  [white]# Decorators são "
+              "necessários para criar métodos de Classe\n    [green]def conta_usuarios(cls):  [white]# método de "
+              "classe\n        [green]print(f'Classe: {cls}')\n        print(f'Temos {cls.contador} usuário(s) no "
+              "sistema!')\n\n"
+              "    [black]@classmethod\n    def ver(cls):\n        print('Teste')\n\n"
+              "    @staticmethod  [white]# método estático\n    [black]def definicao():\n        return 'UXR344'\n\n"
+
+              "[blue]    def __init__(self, nomeuser, sobrenomeuser, emailuser, senhauser):\n        "
+              "self.__id = Usuario.contador + 1\n        self.__nomeuser"
+              " = nomeuser\n        self.__emailuser = emailuser\n        self.__senhauser = cryp.hash(senhauser, "
+              "rounds=2000000, salt_size=16)\n        Usuario.contador = self.__id\n        print(f'Usuário criado: "
+              "{self.__gera_usuario()}')\n\n    "
+                          
+              "[yellow]def nome_completo(self):\n        return f'{self.__nomeuser} {self.__sobrenomeuser}'\n\n"
+              
+              "    [magenta]def checa_senha(self, senhauser):  [white]# método de instância\n"
+              "        [magenta]if cryp.verify(senhauser, self.__senhauser):\n            return True\n"
+              "        return False\n\n"
+                      
+              "[cyan]    def __gera_usuario(self):  [white]# método privado - só é possível acessá-lo dentro da classe"
+              "\n        [cyan]return self.__emailuser.split('@')[0]  [white]# split "
+              "dividindo a string e retornando o slice 0\n\n")
+
+console.print("user1 = Usuario('Angelina', 'Jolie', 'angelina@gmail.com', '123456')\n")
+
+console.print("user2 = Usuario('Felicity', 'Jones', 'felicity@gmail.com', '654321')\n")
+
+console.print("Usuario.conta_usuarios()  [blue]# Forma correta (nome da classe)\n")
+
+console.print("user1.conta_usuarios()  [red]# Possível, mas incorreta (instância da classe)\n")
+
+
+class Usuario:
+
+    contador = 0
+
+    @classmethod  # Decorators são necessários para criar métodos de Classe
+    def conta_usuarios(cls):  # método de classe
+        print(f'Classe: {cls}')
+        print(f'Temos {cls.contador} usuário(s) no sistema!')
+
+    @classmethod
+    def ver(cls):
+        print('Teste')
+
+    @staticmethod  # método estático
+    def definicao():
+        return 'UXR344'
+
+    def __init__(self, nomeuser, sobrenomeuser, emailuser, senhauser):
+        self.__id = Usuario.contador + 1
+        self.__nomeuser = nomeuser
+        self.__sobrenomeuser = sobrenomeuser
+        self.__emailuser = emailuser
+        self.__senhauser = cryp.hash(senhauser, rounds=2000000, salt_size=16)
+        Usuario.contador = self.__id
+        print(f'Usuário criado: {self.__gera_usuario()}')
+
+    #  Métodos de instância são criados pela necessidade de ter acesso a atributos de instãncia;
+    def nome_completo(self):  # método de instância
+        return f'{self.__nomeuser} {self.__sobrenomeuser}'
+
+    def checa_senha(self, senhauser):  # método de instância
+        if cryp.verify(senhauser, self.__senhauser):
+            return True
+        return False
+
+    def __gera_usuario(self):  # método privado - só é possível acessá-lo dentro da classe
+        return self.__emailuser.split('@')[0]  # split dividindo a string e retornando o slice 0
+
+
+user1 = Usuario('Angelina', 'Jolie', 'angelina@gmail.com', '123456')
+
+user2 = Usuario('Felicity', 'Jones', 'felicity@gmail.com', '654321')
+
+Usuario.conta_usuarios()  # Forma correta (nome da classe)
+
+user1.conta_usuarios()  # Possível, mas incorreta (instância da classe)
+
+texto = 'Métodos Estáticos'
+tamanho_desejado = 90  # Largura do bloco
+texto_centralizado = texto.center(tamanho_desejado)  # Centralize o texto
+console.print(f'[yellow]-' * 90)
+console.print(f'[bold white][center]' + texto_centralizado)
+console.print(f'[yellow]-' * 90)
+
+#  Método de instância temos acesso a instância do objeto
+
+#  Método de classe, não temos acesso a instância do objeto
+
+# Método estático, não temos acesso a classe e nem a instância
+
+
+print(Usuario.contador)
+
+print(Usuario.definicao())
+
+user1 = Usuario('Angelina', 'Jolie', 'angelina@gmail.com', '123456')
+
+print(user1.contador)
+
+print(user1.definicao())
