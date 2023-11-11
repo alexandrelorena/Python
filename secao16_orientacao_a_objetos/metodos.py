@@ -164,7 +164,7 @@ print(user2.nome_completo())  # o 'self' é o user2
 # print(f'Senha User 2: {user2._Usuario__senha}')  # Acesso de forma ERRADA de um atributo de classe.
 #
 
-"""nome = input('\n\nInforme o nome: ')
+nome = input('\n\nInforme o nome: ')
 sobrenome = input('Informe o sobrenome: ')
 email = input('Informe o email: ')
 senha = input('Informe a senha: ')
@@ -188,7 +188,7 @@ if user.checa_senha(senha_acesso):
 
 else:
     print('Acesso negado!!!')
-"""
+
 
 texto = 'Métodos de Classe'
 tamanho_desejado = 90  # Largura do bloco
