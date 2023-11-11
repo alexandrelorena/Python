@@ -6,8 +6,9 @@ POO - Objetos
     - São instâncias da classe (como variáveis do tipo definido na classe).
 
 """
-# import shutil
+
 from rich.console import Console
+# import shutil
 # from rich.text import Text
 # from functools import wraps
 # from rich import print
@@ -83,14 +84,13 @@ class Cliente:
     def diz(self):
         print(f'O cliente {self.__nome} diz oi!')
 
-        cc._ContaCorrente__cliente.diz()
 
 console.print("[cyan]class [magenta]ContaCorrente:\n\n    contador = 4999\n\n    def __init__(self, limite, saldo):\n"
               "        self.__numero = ContaCorrente.contador + 1\n        self.__limite = limite\n        "
               "self.__saldo = saldo\n        self.__cliente = cliente\n        ContaCorrente.contador = self.__numero"
-              "\n"
+              "\n\n"
               ""
-              "    def mostra_cliente(self):\n        print(f'O cliente é {self.__cliente._Cliente__nome}')\n")
+              "    [cyan]def mostra_cliente(self):\n        print(f'O cliente é {self.__cliente._Cliente__nome}')\n")
 
 
 class ContaCorrente:
@@ -105,7 +105,8 @@ class ContaCorrente:
         ContaCorrente.contador = self.__numero
 
     def mostra_cliente(self):
-        print(f'O cliente é {self.__cliente._Cliente__nome}')
+        print(f'O cliente é: {self.__cliente._Cliente__nome}')
+        self.__cliente.diz()
 
 
 console.print("[blue]class [yellow]Produto:\n\n    contador = 0\n\n    def __init__(self, nome, descricao, valor):\n"
@@ -222,4 +223,7 @@ cc = ContaCorrente(5000, 20000, cli1)
 
 cc.mostra_cliente()
 
-cc._ContaCorrente__cliente.diz()
+# Exemplo de uso
+cli2 = Cliente("Fulano", "123.456.789-00")
+conta1 = ContaCorrente(1000, 500, cli2)
+conta1.mostra_cliente()

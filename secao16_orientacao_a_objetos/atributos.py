@@ -106,15 +106,22 @@ console.print(f'[bold white][center]' + texto_centralizado)
 console.print(f'[yellow]-' * 90)
 
 console.print("[red]class [blue]Acesso:\n    def __init__(self, email, senha):\n"
-              "        self.email = email\n        self.__senha = senha\n\n    def mostra_senha(self):\n        "
-              "print(self.__senha)\n")
+              "        self.email = email\n        self.__senha = senha\n\n    "
+              ""
+              "[green]def mostra_senha(self):\n              print(self.__senha)\n\n"
+              ""
+              "    [magenta]def mostra_email(self):\n    print(self.email)\n\n"
+              ""
+              "[cyan]@property\n    def senha(self):\n        self._senha = nova_senha\n    return self._senha\n\n"
+              ""
+              "[yellow]@senha.setter\n    def senha(self, nova_senha):\n        self._senha = nova_senha\n\n")
 
 
 class Acesso:
     def __init__(self, email, senha):
-        self._Acesso__senha = None
-        self.email = email  # com 2 underscore no início do atributo, é privado. APENAS CONVENÇÃO
-        self.__senha = senha  # com 2 underscore no início do atributo, é privado. APENAS CONVENÇÃO
+        self._senha = None  # Inicialize com None se não houver senha definida inicialmente, e
+        self.email = email  # utilize apenas um underscore para indicar que é um atributo protegido
+        self.__senha = senha  # Utilize dois underscores para indicar que é um atributo privado
 
     def mostra_senha(self):
         print(self.__senha)
@@ -122,12 +129,17 @@ class Acesso:
     def mostra_email(self):
         print(self.email)
 
+    @property
+    def senha(self):
+        return self._senha
+
+    @senha.setter
+    def senha(self, nova_senha):
+        # Adicione validações ou lógica adicional, se necessário
+        self._senha = nova_senha
+
 
 console.print("user = Acesso('user@gmail.com', '123456')\n")
-
-"""    @property
-    def acesso__senha(self):
-        return self._Acesso__senha"""
 
 user = Acesso('user@gmail.com', '123456')
 
