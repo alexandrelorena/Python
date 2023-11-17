@@ -45,6 +45,15 @@ console.print(f'[yellow]-' * 90)
 # console.print(f'[bold white][center]' + texto_centralizado)
 # console.print(f'[yellow]-' * 90)
 
+console.print("[blue]\nclass Base1:\n    pass\n\n"
+              ""
+              "[black]class Base2:\n    pass\n\n"
+              ""
+              "[cyan]class Base3:\n    pass\n\n"
+              ""
+              "[magenta]class MultiDerivadaDireta(Base1, Base2, Base3):  [white]# herda diretamente de Base1, Base2, "
+              "Base3.\n    [magenta]pass\n")
+
 
 class Animal(object):
 

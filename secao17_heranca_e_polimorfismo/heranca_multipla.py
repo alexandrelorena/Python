@@ -72,7 +72,6 @@ class MultiDerivadaDireta(Base1, Base2, Base3):  # herda diretamente de Base1, B
 
 # ---------------------------------------------------------------------------------------------------------------------
 
-
 texto = 'Multiderivação Indireta'
 tamanho_desejado = 90  # Largura do bloco
 texto_centralizado = texto.center(tamanho_desejado)  # Centralize o texto
