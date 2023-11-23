@@ -46,14 +46,14 @@ texto_centralizado = texto.center(tamanho_desejado)  # Centralize o texto
 # console.print(f'[yellow]-' * 90)
 console.print(f'[bold blue][center]' + texto_centralizado)
 console.print(f'[yellow]-' * 90)
-
-console.print("[black]with open('filmes.csv', 'w', encoding='utf-8') as arquivo:\n"
-              "    escritor_csv = writer(arquivo)\n    filme = None\n    escritor_csv.writerow"
-              "(['Título', 'Gênero', 'Duração'])  [qhite]# este método trabalha com lista\n"
-              "[black]    while filme != 'sair':\n        filme = input('Informe o nome do filme: ')\n"
-              "        if filme != 'sair':\n            genero = input('Informe o gênero do filme: ')\n"
-              "            duracao = input('Informe a duração do filme: ')\n"
-              "            escritor_csv.writerow([filme, genero, duracao])\n\n")
+console.print()
+console.print("    [black]with open('filmes.csv', 'w', encoding='utf-8') as arquivo:\n"
+              "        escritor_csv = writer(arquivo)\n        filme = None\n        escritor_csv.writerow"
+              "(['Título', 'Gênero', 'Duração'])  \n"
+              "    [black]    while filme != 'sair':\n            filme = input('Informe o nome do filme: ')\n"
+              "            if filme != 'sair':\n                genero = input('Informe o gênero do filme: ')\n"
+              "                duracao = input('Informe a duração do filme: ')\n"
+              "                escritor_csv.writerow([filme, genero, duracao])\n\n")
 
 # with open('filmes.csv', 'w', encoding='utf-8') as arquivo:
 #     escritor_csv = writer(arquivo)
