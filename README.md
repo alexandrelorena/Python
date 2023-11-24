@@ -27,8 +27,6 @@
 > - Projeto 1: Game;
 > - Projeto 2: Mercado;
 > - Projeto 3: Banco;
-> 
-> #### Other projects (coming soon...)
 
 <!DOCTYPE html>
 <html lang="pt-br">
