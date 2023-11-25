@@ -47,6 +47,7 @@ console.print(f'tipo: {type(ret)}\nconteúdo: {ret}')
 console.print()
 
 console.print("[yellow]#---------------------------------------------------------------------\n")
+
 class Gato:
 
     def __init__(self, nome, raca):
