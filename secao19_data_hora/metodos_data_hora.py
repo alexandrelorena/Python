@@ -54,8 +54,9 @@ console.print("[yellow]#--------------------------------------------------------
 # --------------------------------------------------------------------------------------------------------------------
 
 # combine() - > combina os valores passados
-# datetime.time() -> passa horas, minutos e segundos
-# como zero
+
+# datetime.time() -> passa horas, minutos e segundos como zero
+
 manutencao = datetime.datetime.combine((datetime.datetime.now() + datetime.timedelta(days=1)), datetime.time())
 
 print(manutencao)
@@ -71,6 +72,7 @@ console.print("[yellow]#--------------------------------------------------------
 # --------------------------------------------------------------------------------------------------------------------
 
 # Os dias da semana do método weekday() iniciam em zero (segunda-feira)
+
 manutencao = datetime.datetime.combine((datetime.datetime.now() + datetime.timedelta(days=1)), datetime.time())
 
 # 0 - Segunda-feira (Monday)
@@ -117,6 +119,7 @@ hoje = datetime.datetime.today()
 print(hoje) # formato em inglês
 
 hoje_formatado = hoje.strftime('%d/%b/%Y %H:%M')
+
 #  /%Y: 'b' minúsculo - nome do mês abreviado (em inglês)
 #  /%Y: 'B' maiúsculo - nome do mês (em inglês)
 
