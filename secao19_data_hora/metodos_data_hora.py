@@ -6,7 +6,7 @@ Métodos de Data e Hora
 from googletrans import Translator
 from rich.console import Console
 import datetime
-from textblob import TextBlob
+# from textblob import TextBlob
 
 # ------------------------------------------------- ↓ Bloco título ↓ -------------------------------------------------
 
@@ -81,30 +81,30 @@ manutencao = datetime.datetime.combine((datetime.datetime.now() + datetime.timed
 # 5 - Sábado (Saturday)
 # 6 - Domingo (Sunday)
 
-# dias_da_semana = ['na Segunda-feira', 'na Terça-feira', 'na Quarta-feira', 'na Quinta-feira', 'na Sexta-feira', 'no Sábado', 'no Domingo']
-#
-# print(f'A manutenção será feita {dias_da_semana[manutencao.weekday()]}!')
-#
-# aniversario = input('Qual sua data de nascimento? dd/mm/yyyy: ')
-#
-# aniversario = aniversario.split('/')
-#
-# aniversario = datetime.datetime(year=int(aniversario[2]), month=int(aniversario[1]), day=int(aniversario[0]))
-#
-# if aniversario.weekday() == 0:
-#     print('Você nasceu em uma segunda-feira')
-# elif aniversario.weekday() == 1:
-#     print('Você nasceu em uma terça-feira')
-# elif aniversario.weekday() == 2:
-#     print('Você nasceu em uma quarta-feira')
-# elif aniversario.weekday() == 3:
-#     print('Você nasceu em uma quinta-feira')
-# elif aniversario.weekday() == 4:
-#     print('Você nasceu em uma sexta-feira')
-# elif aniversario.weekday() == 5:
-#     print('Você nasceu em um sábado')
-# elif aniversario.weekday() == 6:
-#     print('Você nasceu em um domingo')
+dias_da_semana = ['na Segunda-feira', 'na Terça-feira', 'na Quarta-feira', 'na Quinta-feira', 'na Sexta-feira', 'no Sábado', 'no Domingo']
+
+print(f'A manutenção será feita {dias_da_semana[manutencao.weekday()]}!')
+
+aniversario = input('Qual sua data de nascimento? dd/mm/yyyy: ')
+
+aniversario = aniversario.split('/')
+
+aniversario = datetime.datetime(year=int(aniversario[2]), month=int(aniversario[1]), day=int(aniversario[0]))
+
+if aniversario.weekday() == 0:
+    print('Você nasceu em uma segunda-feira')
+elif aniversario.weekday() == 1:
+    print('Você nasceu em uma terça-feira')
+elif aniversario.weekday() == 2:
+    print('Você nasceu em uma quarta-feira')
+elif aniversario.weekday() == 3:
+    print('Você nasceu em uma quinta-feira')
+elif aniversario.weekday() == 4:
+    print('Você nasceu em uma sexta-feira')
+elif aniversario.weekday() == 5:
+    print('Você nasceu em um sábado')
+elif aniversario.weekday() == 6:
+    print('Você nasceu em um domingo')
 
 # --------------------------------------------------------------------------------------------------------------------
 # ↓ Método strftime() | formatando datas/horas ↓
@@ -159,10 +159,6 @@ print((formata_data(hoje)))
 # --------------------------------------------------------------------------------------------------------------------
 # ↓ Formatando datas - usando textblob ↓
 # --------------------------------------------------------------------------------------------------------------------
-
-#  usando textblob
-
-from textblob import TextBlob
 
 # def formata_data(data):
 #     return f"{data.day} de {TextBlob(data.strftime('%B')).translate(to='pt-br')} de {data.year}"
