@@ -3,6 +3,7 @@
 """
 Métodos de Data e Hora
 """
+import functools
 from googletrans import Translator
 from rich.console import Console
 import datetime
@@ -128,7 +129,6 @@ hoje_formatado = hoje.strftime('%d/%b/%Y %H:%M')
 
 print(hoje_formatado) # formato em português
 
-
 def formata_data(data):
     if data.month == 1:
         return f'{data.day} de janeiro de {data.year}'
@@ -160,7 +160,7 @@ hoje = datetime.datetime.today()
 print((formata_data(hoje)))
 
 # --------------------------------------------------------------------------------------------------------------------
-# ↓ Formatando datas - usando textblob ↓
+# ↓ Formatando datas - strftime (converte datetime para string) - usando Translator (googletrans) ↓
 # --------------------------------------------------------------------------------------------------------------------
 
 # def formata_data(data):
@@ -174,3 +174,70 @@ def formata_data(data):
 hoje = datetime.datetime.today()
 
 print((formata_data(hoje)))
+
+# --------------------------------------------------------------------------------------------------------------------
+# ↓ Formatando datas - strptime -> converte string para datetime ↓
+# --------------------------------------------------------------------------------------------------------------------
+
+nascimento = datetime.datetime.strptime('10/04/1998', '%d/%m/%Y')
+
+print(nascimento)
+
+nascimento = input('Qual sua data de nascimento? (dd/mm/yyyy): ')
+
+nascimento = datetime.datetime.strptime(nascimento, '%d/%m/%Y')
+
+print(nascimento)
+
+# --------------------------------------------------------------------------------------------------------------------
+# ↓ Formatando datas - datetime.time ↓
+# --------------------------------------------------------------------------------------------------------------------
+
+almoco = datetime.time(12, 30, 0) # Recebe 3 parâmetros:hora, minuto, segundo
+
+print(f'O Almoço é as {almoco} horas')
+
+# --------------------------------------------------------------------------------------------------------------------
+# ↓ Formatando datas — marcando tempo de execução com timeit ↓
+# --------------------------------------------------------------------------------------------------------------------
+
+import timeit
+# é um 'generator' — recebe 2 parâmetros: uma 'string' e o número de vezes
+
+# Loop for
+tempo = timeit.timeit('"-".join(str(n) for n in range(100))', number=10000)
+print(f'Loop for: {tempo}')
+
+# List Comprehension
+tempo = timeit.timeit('"-".join([str(n) for n in range(100)])', number=10000)
+print(f'List Comprehension: {tempo}')
+
+# Map
+tempo = timeit.timeit('"-".join(map(str, range(100)))', number=10000)
+print(f'Map: {tempo}')
+
+# --------------------------------------------------------------------------------------------------------------------
+# ↓ Formatando datas — marcando tempo de execução com functools ↓
+# --------------------------------------------------------------------------------------------------------------------
+
+def teste(n):
+    soma = 0
+    for num in range(n * 100):
+        soma = soma + num ** num + 4
+    return soma
+
+print(f'Tempo executado sem functools: {timeit.timeit(lambda: teste(2), number=1000)}') # timeit.timeit espera uma função sem
+# argumentos, por isso usamos o lambda ao passar o resultado de uma função.
+"""
+A função timeit.timeit executa a declaração fornecida um milhão de vezes por padrão. No entanto, você pode controlar o 
+número de execuções definindo o argumento number: number=1000
+
+O argumento number é um parâmetro opcional. Por padrão, o valor do argumento number é 1000. 
+Se você deseja executar o programa por mais de um milhão de vezes, defina o valor do argumento number como um número 
+maior.
+
+"""
+
+print()
+
+print(f'Tempo executado com functools: {timeit.timeit(functools.partial(teste, 2), number=1000)}')
