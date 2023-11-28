@@ -8,6 +8,7 @@ import functools
 from googletrans import Translator
 from rich.console import Console
 import datetime
+import timeit
 # from textblob import TextBlob
 
 # ------------------------------------------------- ↓ Bloco título ↓ -------------------------------------------------
@@ -19,13 +20,13 @@ texto = 'Métodos de Data e Hora'
 tamanho_desejado = 70  # Largura do bloco
 texto_centralizado = texto.center(tamanho_desejado)  # Centralize o texto
 
-console.print(f'[on magenta][bold white][center]' + texto_centralizado)
+console.print(f'[on blue][bold white][center]' + texto_centralizado)
 
 # ------------------------------------------------- ↑ Bloco título ↑ -------------------------------------------------
 # ↓ Método: datetime.now() | datetime.today() ↓
 # --------------------------------------------------------------------------------------------------------------------
 
-console.print("[yellow]#---------------------------------------------------------------------\n")
+console.print("[green]#---------------------------------------------------------------------\n")
 
 data_hoje = datetime.datetime.now()
 
@@ -49,7 +50,7 @@ print(repr(hoje))
 
 print()
 
-console.print("[yellow]#---------------------------------------------------------------------\n")
+console.print("[green]#---------------------------------------------------------------------\n")
 
 # --------------------------------------------------------------------------------------------------------------------
 # ↓ Método combine() | Mudanças ocorrendo à meia-noite ↓
@@ -67,7 +68,7 @@ print(type(manutencao))
 
 print(repr(manutencao))
 
-console.print("[yellow]#---------------------------------------------------------------------\n")
+console.print("[green]#---------------------------------------------------------------------\n")
 
 # --------------------------------------------------------------------------------------------------------------------
 # ↓ Método weekday() | Encontrar o dia da semana ↓
@@ -85,7 +86,8 @@ manutencao = datetime.datetime.combine((datetime.datetime.now() + datetime.timed
 # 5 - Sábado (Saturday)
 # 6 - Domingo (Sunday)
 
-dias_da_semana = ['na Segunda-feira', 'na Terça-feira', 'na Quarta-feira', 'na Quinta-feira', 'na Sexta-feira', 'no Sábado', 'no Domingo']
+dias_da_semana = ['na Segunda-feira', 'na Terça-feira', 'na Quarta-feira', 'na Quinta-feira', 'na Sexta-feira',
+                  'no Sábado', 'no Domingo']
 
 print(f'A manutenção será feita {dias_da_semana[manutencao.weekday()]}!')
 
@@ -118,7 +120,7 @@ elif aniversario.weekday() == 6:
 
 hoje = datetime.datetime.today()
 
-print(hoje) # formato em inglês
+print(hoje)  # formato em inglês
 
 hoje_formatado = hoje.strftime('%d/%b/%Y %H:%M')
 
@@ -128,7 +130,8 @@ hoje_formatado = hoje.strftime('%d/%b/%Y %H:%M')
 #  /%y: 'y' minúsculo - ano com dois digitos
 #  /%Y: 'Y' maiúsculo - ano com quatro digitos
 
-print(hoje_formatado) # formato em português
+print(hoje_formatado)  # formato em português
+
 
 def formata_data(data):
     if data.month == 1:
@@ -156,6 +159,7 @@ def formata_data(data):
     elif data.month == 12:
         return f'{data.day} de dezembro de {data.year}'
 
+
 hoje = datetime.datetime.today()
 
 print((formata_data(hoje)))
@@ -167,10 +171,12 @@ print((formata_data(hoje)))
 # def formata_data(data):
 #     return f"{data.day} de {TextBlob(data.strftime('%B')).translate(to='pt-br')} de {data.year}"
 
+
 def formata_data(data):
     translator = Translator()
     month_translation = translator.translate(data.strftime('%B'), dest='pt').text
     return f"{data.day} de {month_translation} de {data.year}"
+
 
 hoje = datetime.datetime.today()
 
@@ -194,7 +200,7 @@ print(nascimento)
 # ↓ Formatando datas - datetime.time ↓
 # --------------------------------------------------------------------------------------------------------------------
 
-almoco = datetime.time(12, 30, 0) # Recebe 3 parâmetros:hora, minuto, segundo
+almoco = datetime.time(12, 30, 0)  # Recebe 3 parâmetros:hora, minuto, segundo
 
 print(f'O Almoço é as {almoco} horas')
 
@@ -202,7 +208,7 @@ print(f'O Almoço é as {almoco} horas')
 # ↓ Formatando datas — marcando tempo de execução com timeit ↓
 # --------------------------------------------------------------------------------------------------------------------
 
-import timeit
+
 # é um 'generator' — recebe 2 parâmetros: uma 'string' e o número de vezes
 
 # Loop for
@@ -221,13 +227,16 @@ print(f'Map: {tempo}')
 # ↓ Formatando datas — marcando tempo de execução com functools ↓
 # --------------------------------------------------------------------------------------------------------------------
 
+
 def teste(n):
     soma = 0
     for num in range(n * 100):
         soma = soma + num ** num + 4
     return soma
 
-print(f'Tempo executado sem functools: {timeit.timeit(lambda: teste(2), number=1000)}') # timeit.timeit espera uma função sem
+
+print(f'Tempo executado sem functools: {timeit.timeit(lambda: teste(2), number=1000)}')  # timeit.timeit espera uma
+# função sem
 # argumentos, por isso usamos o lambda ao passar o resultado de uma função.
 """
 A função timeit.timeit executa a declaração fornecida um milhão de vezes por padrão. No entanto, você pode controlar o 
