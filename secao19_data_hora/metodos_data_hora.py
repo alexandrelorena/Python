@@ -3,6 +3,7 @@
 """
 Métodos de Data e Hora
 """
+
 import functools
 from googletrans import Translator
 from rich.console import Console
