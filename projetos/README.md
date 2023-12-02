@@ -41,9 +41,8 @@
     onmouseover="this.getElementsByTagName('img')[0].src='//cdn.simpleicons.org/discord'"
     onmouseout="this.getElementsByTagName('img')[0].src='//cdn.simpleicons.org/discord/gray'">
     <img src="https://cdn.simpleicons.org/discord" width="32" height="32"></a> 
-<div>
-<!--git status-->
-<a href="https://github-readme-stats.vercel.app/api?username=alexandrelorena&show_icons=true&theme=react">
-<img height="135" src="https://github-readme-stats.vercel.app/api?username=alexandrelorena&show_icons=true&theme=react"></a><!--most used languages--><a href="https://github-readme-stats.vercel.app/api/top-langs/?username=alexandrelorena&hide=TeX&layout=donut&theme=react&size_weight=0.5&count_weight=0.5">
-<img height="135" src="https://github-readme-stats.vercel.app/api/top-langs/?username=alexandrelorena&hide=TeX&layout=donut&theme=react&size_weight=0.5&count_weight=0.5"></a><!--wakatime--><a href = "https://wakatime.com/alexandrelorena"> <img height="135" src="https://github-readme-stats.vercel.app/api/wakatime?username=@alexandrelorena&v=2&theme=react"></a>
+<div align="left">
+  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=@alexandrelorena&v=2&theme=react" height="125" alt="languages graph"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=alexandrelorena&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=react&hide_border=false&order=2" height="125" alt="languages graph" />
+  <img src="https://github-readme-stats.vercel.app/api?username=alexandrelorena&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=react&locale=en&hide_border=false&order=1" height="125" alt="stats graph"/>
 </div>
