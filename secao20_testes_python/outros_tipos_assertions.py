@@ -1,50 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Introdução ao módulo Unittest => Testes unitários
-— Forma de se testar unidades individuais de código-fonte.
-— Unidades individuais podem ser: funções, métodos, classes, módulos, etc.
+Outros tipos de Assertions
 
-Teste unitário não é exclusivo do Python
+assertNotEqual(a, b)
 
-— Para criar os testes, criamos classes que herdam de unittest.
-— Para criarPara rodar os testes, utilizamos unittest.main()
-— TestCase => Casos de teste para sua unidade
+assertTrue(x)
 
-# Conhecendo as Assertions
-
-| Método                    | Assert                |
-|---------------------------|-----------------------|
-| assertEqual(a, b)         | a == b                |
-| assertNotEqual(a, b)      | a != b                |
-| assertTrue(x)             | x is True             |
-| assertFalse(x)            | x is False            |
-| assertIs(a, b)            | a is b                |
-| assertIsNot(a, b)         | a is not b            |
-| assertIsNone(x)           | x is None             |
-| assertIsNotNone(x)        | x is not None         |
-| assertIn(a, b)            | a in b                |
-| assertNotIn(a, b)         | a not in b            |
-| assertIsInstance(a, b)    | a is instance b       |
-| assertNotIsInstance(a, b) | a not is instance b   |
-| assertGreater(a, b)       | a > b                 |
-| assertLess(a, b)          | a < b                 |
-| assertGreaterEqual(a, b)  | a >= b                |
-| assertLessEqual(a, b)     | a <= b                |
-
-Por convenção, todos os testes em um test case, devem ter seu nome iniciado com teste_
-
-#  Para executar os testes com unittest
-
-    — python nome_do_modulo.py
-
-#  Para executar os testes com unittest no modo verbose
-
-    — python nome_do_modulo.py -v
-
-#  Docstrings nos testes
-    — Recomendado acrescentar Docstrings nos testes
-
+assertFalse(x)
 """
 from rich.console import Console
 
@@ -53,15 +16,16 @@ from rich.console import Console
 console = Console()
 
 console.print()
-texto = 'Introdução ao módulo Unittest'
+texto = 'Outros tipos de Assertions'
 tamanho_desejado = 70  # Largura do bloco
 texto_centralizado = texto.center(tamanho_desejado)  # Centralize o texto
 
 console.print(f'[on magenta][bold white][center]' + texto_centralizado)
 
 # ------------------------------------------------- ↑ Bloco título ↑ -------------------------------------------------
-# ↓ Testes unitários - Utilizando a abordagem TDD ↓
+# ↓ outros_tipos_assertions ↓
 # --------------------------------------------------------------------------------------------------------------------
+
 texto = '↓ Testes unitários - Utilizando a abordagem TDD ↓'
 tamanho_desejado = 70  # Largura do bloco
 texto_centralizado = texto.center(tamanho_desejado)  # Centralize o texto
@@ -127,4 +91,5 @@ Docstrings nos testes
 
     [blue]— Recomendado acrescentar Docstrings nos testes[/blue]    
 """)
-console.print("[yellow]#---------------------------------------------------------------------")
+
+console.print("[yellow]#---------------------------------------------------------------------\n")
