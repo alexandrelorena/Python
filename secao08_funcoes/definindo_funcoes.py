@@ -1,9 +1,9 @@
 """
 Definindo Funções
 
-- Pequenas partes de código que realizam tarefas específicas.
-- Pode ou não receber entradas de dados e retornar uma saída de dados.
-- Muito úteis para executar procedimentos similares repetidas vezes.
+— Pequenas partes de código que realizam tarefas específicas.
+— Pode ou não receber entradas de dados e retornar uma saída de dados.
+— Muito úteis para executar procedimentos similares repetidas vezes.
 
 """
 #  Exemploe de utilização de funções:
@@ -33,7 +33,7 @@ print(cores)
 
 #  DRY - Don1t repeat yourself - Não repita  seu código
 
-print('\n----------------------Definindo Função------------------\n")
+print('\n----------------------Definindo Função------------------\n')
 """
 def nome_da_funcao(parametros_de_entrada):
     bloco_da_funcao
@@ -48,7 +48,7 @@ def diz_oi():
     print('oi!')
 
 
-print('\n----------------------Utilizando a Função------------------\n")
+print('\n----------------------Utilizando a Função------------------\n')
 
 diz_oi()  # Não esqueceer dos parênteses ao executar a função
 
@@ -63,7 +63,7 @@ def cantar_parabens():
 
 # cantar_parabens()
 
-# for n in range(5):  # executando a função em loop
+# for n in range(5):  # executando a função em ‘loop’
 #     cantar_parabens()
 
 canta = cantar_parabens  # variável recebendo a função

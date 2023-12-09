@@ -4,7 +4,7 @@
 > # Some projects in Python language 
 >### Course Projects "Programação em Python do básico ao avançado" - Geek University | Udemy
 > - Cores (with python, html, css and javascript) - [Click here](https://alexandrelorena.github.io/projetos-em-python/cores/cores_table.html) or in the image to test the browser  
-> &nbsp; <a href="https://alexandrelorena.github.io/projetos-em-python/cores/cores_table.html"><p align="left"><img src="cores/images/cores6.png" width="90%"></p></a>
+> &nbsp; <a href="https://alexandrelorena.github.io/projetos-em-python/cores/cores_table.html"><p align="left"><img src="cores/images/cores.png" width="77%"></p></a>
 > - Banco
 > - Game
 > - Mercado
