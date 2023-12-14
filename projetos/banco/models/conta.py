@@ -1,7 +1,6 @@
 from projetos.banco.models.cliente import Cliente
 from projetos.banco.utils.helper import formata_float_str_moeda
 
-
 class Conta:
 
     codigo: int = 1001
@@ -15,7 +14,11 @@ class Conta:
         Conta.codigo += 1
 
     def __str__(self: object) -> str:
-        return f'Número da conta: {self.numero} \nCliente: {self.cliente.nome} ' \
+        return f'Número da conta: {self.numero}\n'\
+               f'Cliente: {self.cliente.nome}\n'\
+               f'Email: {self.cliente.email}\n'\
+               f'CPF: {self.cliente.cpf}\n'\
+               f'Data de nascimento: {self.cliente.data_nascimento}'\
                f'\nSaldo Total: {formata_float_str_moeda(self.saldo_total)}'
 
     @property
@@ -60,7 +63,7 @@ class Conta:
             self.saldo_total = self._calcula_saldo_total
             print('Depósito efetuado com sucesso!')
         else:
-            print('Erro ao efetuar depósito. Tente novamente')
+            print('Erro ao efetuar depósito. Tente novamente!')
 
     def sacar(self: object, valor: float) -> None:
         if 0 < valor <= self.saldo_total:
@@ -72,9 +75,9 @@ class Conta:
                 self.limite = self.limite + restante
                 self.saldo = 0
                 self.saldo_total = self._calcula_saldo_total
-            print('Saque efetuado com sucesso')
+            print('Saque efetuado com sucesso!!!')
         else:
-            print('Saque não realizado. Tente novamente')
+            print('Saque não realizado. Tente novamente!')
 
     def transferir(self: object, destino: object, valor: float) -> None:
         if valor > 0 and self.saldo_total >= valor:
@@ -90,7 +93,7 @@ class Conta:
                 self.saldo_total = self._calcula_saldo_total
                 destino.saldo = destino.saldo + valor
                 destino.saldo_total = destino._calcula_saldo_total
-            print('Transferência realizada com sucesso.')
+            print('Transferência realizada com sucesso!!!')
         else:
-            print('Transferência não realizada. Tente novamente')
+            print('Transferência não realizada. Tente novamente!')
 
