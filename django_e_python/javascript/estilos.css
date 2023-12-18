@@ -1,0 +1,23 @@
+body {
+
+	background: grey;
+	color: white;
+}
+
+/* tag html */
+p {
+	color: red;,
+	font-weight: bold;
+}
+
+/* classe */
+.blue {
+
+	color: blue;
+	font-size: 42px;
+}
+
+/* id */
+#p2 {
+	text-decoration: underline;
+}
