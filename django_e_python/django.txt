@@ -1,0 +1,73 @@
+- New Project
+- pip install django
+- pip freeze > requeriments.txt
+
+
+(django1) PS C:\Users\Usuario\PycharmProjects\django1> django-admin startproject django1 .
+
+
+APLICAÇÃO DJANGO:
+
+# adicionar a aplicação em settings.py  >>  INSTALLED_APPS
+
+# adicionar em TEMPLATES >> DIRS >> 'templates'
+
+
+(django1) PS C:\Users\Usuario\PycharmProjects\django1> django-admin startapp core
+
+
+STARTANDO SERVIDOR WEB NO DJANGO:
+
+Via terminal, no mesmo diretório do manage.py => python manage.py runserver
+
+
+MIGRATION:
+
+Após criar a classe e os atributos,  ir para MIGRATIONS - python manage.py makemigrations
+
+CRIAÇÃO DO BANCO DE DADOS
+
+python manage.py migrate
+
+
+CRIANDO USUARIO:
+
+python manage.py createsuperuser
+
+
+HELP:
+
+python manage.py
+
+python manage.py help makemigrations
+
+
+SHELL:
+
+python manage.py shell
+
+>>> from core.models import Produto
+>>> dir(Produto)
+>>> produto = Produto(nome="Atari 2600", preco= 199.67, estoque=100) 
+>>> produto.save()   
+
+>>> produto.id  
+>>> produto.pk  
+
+>>> from core.models import Cliente
+>>> cliente = Cliente(nome='Angelina', sobrenome='Jolie', email='angelina@gmail.com')
+>>> cliente.save()  
+>>> cliente.id   
+>>> cliente.pk 
+>>> cliente    
+>>> print(cliente)
+>>> cliente.nome = 'Maria'
+>>> cliente.save()
+>>> cliente.delete()
+
+
+
+
+>>> from core.views import index
+>>> dir(index)
+
