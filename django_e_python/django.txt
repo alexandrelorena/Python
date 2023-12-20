@@ -1,3 +1,6 @@
+https://adventofcode.com/2023/day/1
+
+
 - New Project
 - pip install django
 - pip freeze > requeriments.txt
@@ -82,3 +85,5 @@ python manage.py shell
 >>> Produto.objects.first()
 >>> Produto.objects.last()
 >>> Produto.objects.filter(id=1)
+
+
