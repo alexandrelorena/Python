@@ -71,3 +71,14 @@ python manage.py shell
 >>> from core.views import index
 >>> dir(index)
 
+>>> from core.models import Produto
+>>> dir(Produto)
+>>> dir(Produto.objects)
+>>> produtos = Produto.objects.all()
+>>> produtos
+>>> for produto in produtos:
+...     print(produto)
+>>> Produto.objects.count()
+>>> Produto.objects.first()
+>>> Produto.objects.last()
+>>> Produto.objects.filter(id=1)
