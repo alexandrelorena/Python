@@ -17,8 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-
 urlpatterns = [
     path('painel/', admin.site.urls),
     path('', include('core.urls')),
 ]
+
+
+handler404 = 'core.views.error404'
+handler500 = 'core.views.error500'
