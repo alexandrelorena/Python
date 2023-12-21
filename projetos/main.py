@@ -1,29 +1,41 @@
 import tkinter as tk
+from tkinter import filedialog
+import os
 
-class Application(tk.Frame):
-    def __init__(self, master=None):
-        super().__init__(master)
+class ProgramWindow:
+    def __init__(self, master):
         self.master = master
-        self.pack()
+        self.master.title("Programa Python")
+        self.master.geometry("500x500")
         self.create_widgets()
 
     def create_widgets(self):
-        self.hi_there = tk.Button(self)
-        self.hi_there["text"] = "Hello World\n(click me)"
-        self.hi_there["command"] = self.say_hi
-        self.hi_there.pack(side="top")
+        self.text = tk.Text(self.master, wrap="word")
+        self.text.pack(fill="both", expand=True)
 
-        self.quit = tk.Button(self, text="QUIT", fg="red",
-                              command=self.master.destroy)
-        self.quit.pack(side="bottom")
+        self.menu = tk.Menu(self.master)
+        self.master.config(menu=self.menu)
 
-    def say_hi(self):
-        print("hi there, everyone!")
+        self.file_menu = tk.Menu(self.menu, tearoff=False)
+        self.menu.add_cascade(label="Arquivo", menu=self.file_menu)
+        self.file_menu.add_command(label="Abrir banco.py", command=self.open_banco_file)
+        self.file_menu.add_separator()
+        self.file_menu.add_command(label="Sair", command=self.master.quit)
 
-root = tk.Tk()
-app = Application(master=root)
-app.mainloop()
+    def open_banco_file(self):
+        # Caminho do arquivo 'banco.py'
+        banco_path = r"C:\Users\DXC\Documents\Alexandre\pythonProject\projetos\banco\banco.py"
 
+        try:
+            with open(banco_path, "r") as f:
+                self.text.delete("1.0", "end")
+                self.text.insert("1.0", f.read())
+        except FileNotFoundError:
+            print("Arquivo 'banco.py' não encontrado.")
+        except Exception as e:
+            print(f"Erro ao abrir 'banco.py': {e}")
 
-def Tk():
-    return None
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = ProgramWindow(root)
+    root.mainloop()
