@@ -1,0 +1,57 @@
+Preparando o ambiente 
+
+1 - (pyprojects) PS E:\Python\django2> pip install django whitenoise gunicorn django-bootstrap4  PyMySQL django-stdimage
+
+2 - (pyprojects) PS E:\Python\django2> pip freeze > requirements.txt
+
+3 - Criar o projeto:
+	(pyprojects) PS E:\Python\django2> django-admin startproject django2 .
+	# o ponto após django2 serve para que nao seja criado um subdiretório.
+
+4 - Criar a aplicação:
+	(pyprojects) PS E:\Python\django2> django-admin startapp core
+
+5 - No arquivo settings.py:
+    a- adicionar em:
+        ALLOWED_HOSTS = ['*']
+
+    b- adicionar em:
+        INSTALLED_APPS = [
+        'core',
+        'bootstrap4',
+        'stdimage',
+        ]
+
+    c- adicionar 'whitenoise' COMENTADO (será usado apenas em produção) na segunda linha de:
+        MIDDLEWARE = [
+            # 'whitenoise.middleware.WhiteNoiseMiddleware',
+        ]
+
+    d- adicionar o diretório 'templates' em:
+        TEMPLATES = [
+    {
+        'DIRS': ['templates'],
+
+    e- alterar em DATABASES, o ENGINE de 'sqlite3' para 'mysql' e o NAME para django2:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': django2',
+
+    f- adiconar user, password, host e porta:
+                'USER': 'alexloo',
+                'PASSWORD': 'alexloo2357',
+                'HOST': 'localhost',
+                'PORT': '3306',
+            }
+        }
+
+    g- alterar linguagem para pt-br:
+        LANGUAGE_CODE = 'pt-br'
+
+    h- alterar time-zone:
+        TIME_ZONE = 'America/São_Paulo'
+
+    i- adicionar staticfiles (STATIC_ROOT):
+        STATIC_URL = 'static/'
+        STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

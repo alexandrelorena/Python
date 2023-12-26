@@ -1,0 +1,38 @@
+
+- system cls  >>  limpar a tela
+- ctrl + C >> parar
+
+- mostrar bancos de dados existentes:
+mysql> show databases;
+
+- acessar banco de dados:
+mysql> use sakila;
+Database changed
+
+- mostrar tabelas:
+mysql> show tables;
+
+- consultar dados de uma tabela:
+mysql> SELECT * FROM tabela;
+
+- deslogar do bnco de daados:
+    exit;
+    \q;
+
+
+1 - no cmd: mysql -u root -p
+
+2 - mysql> CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'senha';
+
+3 - dar permisões ao usuário usando comando 'GRANT' do 'data control language' (DLC):
+    mysql> GRANT ALL PRIVILEGES ON *.* TO 'alexloo'@'localhost' WITH GRANT OPTION;
+
+4 - recarregar a tabela de privilégios desse banco de dados:
+    mysql> FLUSH PRIVILEGES;
+
+5 - Deslogando de ROOT e logando com usuario criado:
+    mysql> EXIT;
+    Bye
+
+    C:\Users\Usuario>mysql -u usuario -p
+    Enter password:
