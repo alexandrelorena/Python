@@ -55,3 +55,39 @@ Preparando o ambiente
     i- adicionar staticfiles (STATIC_ROOT):
         STATIC_URL = 'static/'
         STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+VIEWS:
+    1 - criar em views.py função para index, contato e produto:
+        def index(request):
+            return render(request, 'core/index.html')
+
+
+CORE/TEMPLATES:
+    1 - criar os arquivos templates: index.html, contato.html e produto.html
+
+
+CORE/STATIC:
+    1 - criar diretorios CSS, IMAGES, JS
+
+
+DJANGO2/urls.py
+    1 - adicionar include: from django.urls import path, include
+    2 - adicionar path: path('', include('core.urls')),
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+CORE:
+    1 - criar arquivo urls.py
+    2 - imports:
+        from django.urls import path
+        from .views import index, contato, produto
+    3 - criar urlpatterns:
+            urlpatterns = [
+                path('', index, name='index'),
+                path('contato/', contato, name='contato'),
+                path('produto/', produto, name='produto'),
+            ]
+
+# ----------------------------------------------------------------------------------------------------------------------
